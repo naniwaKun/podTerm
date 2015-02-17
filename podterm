@@ -39,7 +39,7 @@ def viewpodcast(filename)
     puts "Description:\t" + rss.channel.description
     puts
   }
-  
+print "何番のポッドキャストを聞きますか？(半角数字のみ)："  
   num = gets.chomp
   return urls[num.to_i - 1 ]
 end
@@ -52,11 +52,12 @@ def viewItems(url)
     puts "Description:\t" + item.description
     puts
   }
+print "何番のエピソードを聞きますか？(半角数字のみ)："  
       num = gets.chomp
         return rss.items[num.to_i - 1 ].enclosure.url
 end
 
-filename = File.expand_path('~') + "/.podterm/.urls";
+filename = File.expand_path('~') + "/.Podterm/urls";
 
 if ARGV[0] == nil then
 loop{
