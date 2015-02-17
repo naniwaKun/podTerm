@@ -34,12 +34,16 @@ def viewpodcast(filename)
 
   urls.each_with_index{|podcast , index|
     rss = RSS::Parser.parse(podcast)
-    puts "No.#{index+1} ####"
-    puts "Title:\t\t" + rss.channel.title
-    puts "Description:\t" + rss.channel.description
+    print "\e[35m"
+    print "No.#{index+1}"
+    puts "\e[0m"
+    puts "Title:\t\t" + rss.channel.title.gsub(/(\s)/,"")
+    	puts "Description:\t" + rss.channel.description.gsub(/(\s)/,"")
     puts
   }
-print "何番のポッドキャストを聞きますか？(半角数字のみ)："  
+  print "\e[35m"
+  print "何番のポッドキャストを聞きますか？(半角数字のみ)："  
+  print "\e[0m"
   num = gets.chomp
   return urls[num.to_i - 1 ]
 end
@@ -47,24 +51,34 @@ end
 def viewItems(url)
   rss = RSS::Parser.parse(url)
   rss.items.each_with_index{|item , index|
-    puts "No.#{index+1} ####"
-    puts "Title:\t\t" + item.title
-    puts "Description:\t" + item.description
+    print "\e[35m"
+if  (defined? (item.enclosure.url) )
+    print "No.#{index+1}"
+else 
+    print "No.#{index+1}"
+    print "\e[33m"
+    print "音声ファイルがないようです。。"
+end
+puts "\e[0m"
+    puts "Title:\t\t" + item.title.gsub(/(\s)/,"")
+    puts "Description:\t" + item.description.gsub(/(\s)/,"")
     puts
   }
-print "何番のエピソードを聞きますか？(半角数字のみ)："  
-      num = gets.chomp
-        return rss.items[num.to_i - 1 ].enclosure.url
+  print "\e[35m"
+  print "何番のエピソードを聞きますか？(半角数字のみ)："  
+  print "\e[0m"
+  num = gets.chomp
+  return rss.items[num.to_i - 1 ].enclosure.url
 end
 
 filename = File.expand_path('~') + "/.Podterm/urls";
 
 if ARGV[0] == nil then
-loop{
-  url = viewpodcast(filename)
-  mp3url = viewItems(url)
-  `mplayer #{mp3url}`
-}
+  loop{
+    url = viewpodcast(filename)
+    mp3url = viewItems(url)
+    `mplayer #{mp3url}`
+  }
 else
   addpodcast(filename,ARGV[0])
 end
