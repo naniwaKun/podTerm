@@ -6,7 +6,9 @@ terminal上で動くPodcastクライアント。RubyでRSS2.0をパースして�
 使い方、
 
 //購読する
+
 $ podterm "どこかのRSS2.0のURL （podcastフィード）"
 
 //聞く
+
 $ podterm
