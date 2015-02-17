@@ -12,3 +12,5 @@ $ podterm "どこかのRSS2.0のURL （podcastフィード）"
 //聞く
 
 $ podterm
+
+http://cfw4.dip.jp/wordpress/158
