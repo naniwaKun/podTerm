@@ -10,7 +10,9 @@ RubyでRSS2.0をパースして、再生はmplayerに投げてます。
 使い方、
 
 //購読する
+
 $ podterm "どこかのRSS2.0のURL （podcastフィード）"
 
 //聞く
+
 $ podterm
