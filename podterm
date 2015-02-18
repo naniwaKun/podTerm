@@ -1,16 +1,15 @@
 #!/bin/sh
 
-while :
-do
+
+if [  $# == 0 ]; then
 	clear
-	ruby podterm.rb $1
+	ruby Podterm/podterm.rb 
+	clear
 	url=`cat ~/.Podterm/mp3url`
 	clear
-	mpv  -ao alsa $url
-	echo "続けて聞きますか？(Y/n):"
-	read key
-	if [ "$key" = "n" ]; then
-		clear
-		break
-	fi
-done
+	cat Podterm/help
+	mpv -ao alsa $url
+fi
+if [  $# == 1 ]; then
+	ruby Podterm/podterm.rb "$1"
+fi
