@@ -1,16 +1,14 @@
 podTerm
 ===============
 
-terminal上で動くPodcastクライアント。RubyでRSS2.0をパースして、再生はmplayerに投げてます。パスを通せば使えるはず。
+terminal上で動くPodcastクライアント。RubyでRSS2.0をパースして、再生はmpvに投げてます。パスを通せば使えるはず。
 
-使い方、
+使い方:[1分ほどの動画で紹介しています。](http://cfw4.dip.jp/wordpress/158)
 
-//購読する
+//podcastを購読する
 
-$ podterm "どこかのRSS2.0のURL （podcastフィード）"
+$ pot http://naniwaradio.dip.jp/feed/podcast
 
 //聞く
 
-$ podterm
-
-http://cfw4.dip.jp/wordpress/158
+$ pot
