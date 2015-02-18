@@ -1,15 +1,17 @@
 #!/bin/sh
-
+po=$(cd $(dirname $0);pwd)
+pod="${po}/Podterm/podterm.rb"
+hel="${po}/Podterm/help"
 
 if [  $# == 0 ]; then
 	clear
-	ruby Podterm/podterm.rb 
+	ruby $pod
 	clear
 	url=`cat ~/.Podterm/mp3url`
 	clear
-	cat Podterm/help
+	cat $hel
 	mpv -ao alsa $url
 fi
 if [  $# == 1 ]; then
-	ruby Podterm/podterm.rb "$1"
+	ruby "$pod" "$1"
 fi
