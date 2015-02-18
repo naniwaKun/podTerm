@@ -10,7 +10,8 @@ if [  $# == 0 ]; then
 	url=`cat ~/.Podterm/mp3url`
 	clear
 	cat $hel
-	mpv -ao alsa $url
+	mpv  $url
+	#mpv -ao alsa $url
 fi
 if [  $# == 1 ]; then
 	ruby "$pod" "$1"
