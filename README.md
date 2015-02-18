@@ -7,7 +7,7 @@ terminal上で動くPodcastクライアント。RubyでRSS2.0をパースして�
 
 //podcastを購読する
 
-$ pot http://naniwaradio.dip.jp/feed/podcast
+$ `pot http://naniwaradio.dip.jp/feed/podcast`
 
 //聞く
 
