@@ -5,7 +5,7 @@ require "json"
 
 def addpodcast(feeds,url)
 
-rss = RSS::Parser.parse(url)
+rss = RSS::Parser.parse(url, false)
 profile = {}
 
 profile['url'] = url
