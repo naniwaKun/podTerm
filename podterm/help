@@ -1,24 +1,16 @@
-Space		:一時停止・再生再開
-Enter		:次の曲に移動 または 最後のファイルなら Mplayer 終了
-Q		:終了
+Space: Pause and playback resume
+Q: Exit
 
-0		:音量増加
-9		:音量減少
+0: volume increase
+9: volume reduction
 
-→ 		:10秒早送り
-← 		:10秒巻戻し
+→: 10 seconds fast forward
+←: back 10 seconds winding
 
-↑ 		:１分早送り
-↓ 		:１分巻戻し
+↑: 1 minute fast forward
+↓: back 1 minute winding
 
-PageUp		:10分早送り
-PageDown	:10分巻戻し
+PageUp: 10 minutes fast forward
+PageDown: back 10 minutes winding
 
-Shift + [	:再生速度２倍減速 ( 1 → 0.5 → 0.25 ・・・)
-Shift + [	:再生速度２倍加速 ( 1 → 2 → 4 ・・・)
-BackSpace	:加減速リセット
-
-M		:音声ミュート。 
-
-
-
+M: audio mute.
