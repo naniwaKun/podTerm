@@ -22,4 +22,5 @@ package() {
 	cd "$srcdir/podTerm"
 	install -Dm755 "pot" "${pkgdir}/usr/bin/pot"
 	install  -Dm755 "podterm/podterm.rb" "${pkgdir}/usr/bin/podterm/podterm.rb"
+	install  -Dm755 "podterm/help" "${pkgdir}/usr/bin/podterm/help"
 }
