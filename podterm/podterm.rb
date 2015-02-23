@@ -58,7 +58,7 @@ def viewpodcast(feeds)
 end
 
 def viewItems(url)
-  rss = RSS::Parser.parse(url)
+  rss = RSS::Parser.parse(url, false)
   num = rss.items.length
   rss.items.reverse!
 
