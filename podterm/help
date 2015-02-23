@@ -1,16 +1,12 @@
-Space: Pause and playback resume
-Q: Exit
-
-0: volume increase
-9: volume reduction
-
-→: 10 seconds fast forward
-←: back 10 seconds winding
-
-↑: 1 minute fast forward
-↓: back 1 minute winding
-
-PageUp: 10 minutes fast forward
-PageDown: back 10 minutes winding
-
-M: audio mute.
+Space    : Pause and playback resume
+Q        : Exit
+0        : volume increase
+9        : volume reduction
+→        : 10 seconds fast forward
+←        : back 10 seconds winding
+↑        : 1 minute fast forward
+↓        : back 1 minute winding
+PageUp   : 10 minutes fast forward
+PageDown : back 10 minutes winding
+M        : audio mute.
+######################################
