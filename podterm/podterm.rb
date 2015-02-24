@@ -59,15 +59,13 @@ end
 
 def viewItems(url)
   rss = RSS::Parser.parse(url, false)
-  num = rss.items.length
-  rss.items.reverse!
 
   rss.items.each_with_index{|item , index|
     print "\e[35m"
 if  (defined? (item.enclosure.url) )
-    print "No.#{num - index}"
+    print "No.#{index}"
 else 
-    print "No.#{num - index}"
+    print "No.#{index}"
     print "\e[33m"
     print "Not existing audio file ..."
 end
@@ -82,7 +80,6 @@ end
   print "Type Byte Number :"  
   print "\e[0m"
   num = gets.chomp
-  rss.items.reverse!
  rss.items[num.to_i - 1 ].enclosure.url
 end
 
