@@ -63,9 +63,9 @@ def viewItems(url)
   rss.items.each_with_index{|item , index|
     print "\e[35m"
 if  (defined? (item.enclosure.url) )
-    print "No.#{index}"
+    print "No.#{index+1}"
 else 
-    print "No.#{index}"
+    print "No.#{index+1}"
     print "\e[33m"
     print "Not existing audio file ..."
 end
