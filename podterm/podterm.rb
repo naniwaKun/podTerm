@@ -72,8 +72,10 @@ else
     print "Not existing audio file ..."
 end
 puts "\e[0m"
-    puts "Title:\t\t" + item.title.gsub(/(\s)/,"")
-#    puts "Description:\t" + item.description.gsub(/(\s)/,"")
+puts "Title:\t\t" + item.title.gsub(/(\s)/,"")
+if  (defined? (item.description) )
+    puts "Description:\t" + item.description.gsub(/(\s)/,"")
+end
   }
     puts
   print "\e[35m"
