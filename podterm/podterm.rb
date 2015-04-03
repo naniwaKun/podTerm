@@ -41,7 +41,7 @@ def viewpodcast(feeds)
     end
   end
 
-  profiles.each_with_index{|podcast , index|
+  profiles.each_with_index.reverse_each{|podcast , index|
     print "\e[35m"
     print "No.#{index+1}"
     puts "\e[0m"
@@ -60,7 +60,7 @@ end
 def viewItems(url)
   rss = RSS::Parser.parse(url, false)
 
-  rss.items.each_with_index{|item , index|
+  rss.items.each_with_index.reverse_each{|item , index|
     print "\e[35m"
 if  (defined? (item.enclosure.url) )
     print "No.#{index+1}"
