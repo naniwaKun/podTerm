@@ -8,7 +8,7 @@ license=('MIT')
 depends=('bash' 'mpv' 'ruby')
 optdepends=('zeromq')
 makedepends=('git')
-source=('podTerm::git+https://github.com/naniwaradio/podTerm.git')
+source=('podTerm::git+https://github.com/naniwaKun/podTerm.git')
 md5sums=('SKIP')
 
 pkgver() {
