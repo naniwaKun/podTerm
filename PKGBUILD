@@ -11,7 +11,7 @@ makedepends=('git')
 source=('podTerm::git+https://github.com/naniwaKun/podTerm.git')
 md5sums=('SKIP')
 
-pkgver() {
+build() {
         cd "$srcdir/podTerm"
         # Use the tag of the last commit
         git describe --long | sed -E 's/([^-]*-g)/r\1/;s/-/./g'
