@@ -12,7 +12,7 @@ if [  $# == 0 ]; then
 		#clear
 		cat $hel
 		#mpv  $url
-		mpv -ao alsa $url
+		mpv $url
 
 	fi
 fi
