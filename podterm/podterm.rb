@@ -5,12 +5,12 @@ require "json"
 
 def addpodcast(feeds,url)
 
-rss = RSS::Parser.parse(url, false)
-profile = {}
+  rss = RSS::Parser.parse(url, false)
+  profile = {}
 
-profile['url'] = url
-profile['title'] = rss.channel.title.gsub(/(\s)/,"")
-profile['des'] = rss.channel.description.gsub(/(\s)/,"").gsub(/<\/?[^>]*>/, "")
+  profile['url'] = url
+  profile['title'] = rss.channel.title.gsub(/(\s)/,"")
+  profile['des'] = rss.channel.description.gsub(/(\s)/,"").gsub(/<\/?[^>]*>/, "")
 
   urls = Array.new()
   if File.exist?(feeds) then
@@ -46,9 +46,9 @@ def viewpodcast(feeds)
     print "No.#{index+1}"
     puts "\e[0m"
     puts "Title:\t\t" + podcast["title"]
-    	puts "Description:\t" + podcast["des"]
+    puts "Description:\t" + podcast["des"]
   }
-    puts
+  puts
   print "\e[35m"
   print "Type Byte Number :"  
   print "\e[0m"
@@ -62,25 +62,25 @@ def viewItems(url)
 
   rss.items.each_with_index.reverse_each{|item , index|
     print "\e[35m"
-if  (defined? (item.enclosure.url) )
-    print "No.#{index+1}"
-else 
-    print "No.#{index+1}"
-    print "\e[33m"
-    print "Not existing audio file ..."
-end
-puts "\e[0m"
-puts "Title:\t\t" + item.title.gsub(/(\s)/,"")
-if  (defined? (item.description) )
-    puts "Description:\t" + item.description.gsub(/(\s)/,"")
-end
+    if  (defined? (item.enclosure.url) )
+      print "No.#{index+1}"
+    else 
+      print "No.#{index+1}"
+      print "\e[33m"
+      print "Not existing audio file ..."
+    end
+    puts "\e[0m"
+    puts "Title:\t\t" + item.title.gsub(/(\s)/,"")
+    if  (defined? (item.description) )
+      puts "Description:\t" + item.description.gsub(/(\s)/,"")
+    end
   }
-    puts
+  puts
   print "\e[35m"
   print "Type Byte Number :"  
   print "\e[0m"
   num = gets.chomp
- rss.items[num.to_i - 1 ].enclosure.url
+  rss.items[num.to_i - 1 ].enclosure.url
 end
 
 #main
@@ -101,20 +101,20 @@ if !File.exist?(base) then
 end
 
 
-  if !File.exist?(feeds) and ARGV[0] == nil then
-    puts 'Please run command this : $ pot "podcast feed url"'
-    exit
-  end
+if !File.exist?(feeds) and ARGV[0] == nil then
+  puts 'Please run command this : $ pot "podcast feed url"'
+  exit
+end
 
-  if ARGV[0] != nil then
-    addpodcast(feeds,ARGV[0])
-    exit
-  else
+if ARGV[0] != nil then
+  addpodcast(feeds,ARGV[0])
+  exit
+else
   url = viewpodcast(feeds)
   mp3url = viewItems(url)
   File.open(playlist,"w") do |file|
     file.puts mp3url
   end
-  end
+end
 
 
